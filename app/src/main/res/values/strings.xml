@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AssigmentUdacodingWeek2</string>
+    <string name="logo">Logo Ubuntu</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="masukkan_username">Masukkan username</string>
+    <string name="masukkan_password">Masukkan password</string>
+    <string name="login">Login</string>
+    <string name="move_to_calculator">Move to Calculator</string>
+    <string name="move_to_list_recyclerview">Move to List RecyclerView</string>
+    <string name="nilai_1">Nilai 1</string>
+    <string name="nilai_2">Nilai 2</string>
+    <string name="penjumlahan">Penjumlahan</string>
+    <string name="pengurangan">Pengurangan</string>
+    <string name="pembagian">Pembagian</string>
+    <string name="perkalian">Perkalian</string>
+    <string name="hasil">Hasil</string>
+    <string name="book_title">Book Title</string>
+    <string name="book_author">Book Author</string>
+</resources>
