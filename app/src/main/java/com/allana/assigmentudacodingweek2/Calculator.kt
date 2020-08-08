@@ -1,11 +1,11 @@
 package com.allana.assigmentudacodingweek2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class Calculator : AppCompatActivity(), View.OnClickListener {
 
@@ -37,6 +37,7 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
         btnPembagian.setOnClickListener(this)
 
         tvResult = findViewById(R.id.tv_result)
+
     }
 
     override fun onClick(v: View?) {
@@ -46,7 +47,6 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
                 val inputValue2 = edtValue2.text.toString().trim()
 
                 var isEmptyField = false
-                var isInvalidDouble = false
 
                 if (inputValue1.isEmpty()){
                     isEmptyField = true
@@ -58,21 +58,8 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
                     edtValue2.error = "Field nilai tidak boleh kosong"
                 }
 
-                val value1 = toDouble(inputValue1)
-                val value2 = toDouble(inputValue2)
-
-                if (value1 == null){
-                    isInvalidDouble = true
-                    edtValue1.error = "Field ini harus berupa angka yang valid"
-                }
-
-                if (value2 == null){
-                    isInvalidDouble = true
-                    edtValue2.error = "Field ini harus berupa angka yang valid"
-                }
-
-                if (!isEmptyField && !isInvalidDouble){
-                    val calculate = value1 as Double + value2 as Double
+                if (!isEmptyField){
+                    val calculate = inputValue1.toDouble() + inputValue2.toDouble()
                     tvResult.text = calculate.toString()
                 }
             }
@@ -82,7 +69,6 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
                 val inputValue2 = edtValue2.text.toString().trim()
 
                 var isEmptyField = false
-                var isInvalidDouble = false
 
                 if (inputValue1.isEmpty()){
                     isEmptyField = true
@@ -94,21 +80,8 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
                     edtValue2.error = "Field nilai tidak boleh kosong"
                 }
 
-                val value1 = toDouble(inputValue1)
-                val value2 = toDouble(inputValue2)
-
-                if (value1 == null){
-                    isInvalidDouble = true
-                    edtValue1.error = "Field ini harus berupa angka yang valid"
-                }
-
-                if (value2 == null){
-                    isInvalidDouble = true
-                    edtValue2.error = "Field ini harus berupa angka yang valid"
-                }
-
-                if (!isEmptyField && !isInvalidDouble){
-                    val calculate = value1 as Double - value2 as Double
+                if (!isEmptyField){
+                    val calculate = inputValue1.toDouble() - inputValue2.toDouble()
                     tvResult.text = calculate.toString()
                 }
             }
@@ -118,7 +91,6 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
                 val inputValue2 = edtValue2.text.toString().trim()
 
                 var isEmptyField = false
-                var isInvalidDouble = false
 
                 if (inputValue1.isEmpty()){
                     isEmptyField = true
@@ -130,21 +102,9 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
                     edtValue2.error = "Field nilai tidak boleh kosong"
                 }
 
-                val value1 = toDouble(inputValue1)
-                val value2 = toDouble(inputValue2)
 
-                if (value1 == null){
-                    isInvalidDouble = true
-                    edtValue1.error = "Field ini harus berupa angka yang valid"
-                }
-
-                if (value2 == null){
-                    isInvalidDouble = true
-                    edtValue2.error = "Field ini harus berupa angka yang valid"
-                }
-
-                if (!isEmptyField && !isInvalidDouble){
-                    val calculate = value1 as Double * value2 as Double
+                if (!isEmptyField){
+                    val calculate = inputValue1.toDouble() * inputValue2.toDouble()
                     tvResult.text = calculate.toString()
                 }
             }
@@ -154,7 +114,6 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
                 val inputValue2 = edtValue2.text.toString().trim()
 
                 var isEmptyField = false
-                var isInvalidDouble = false
 
                 if (inputValue1.isEmpty()){
                     isEmptyField = true
@@ -166,32 +125,11 @@ class Calculator : AppCompatActivity(), View.OnClickListener {
                     edtValue2.error = "Field nilai tidak boleh kosong"
                 }
 
-                val value1 = toDouble(inputValue1)
-                val value2 = toDouble(inputValue2)
-
-                if (value1 == null){
-                    isInvalidDouble = true
-                    edtValue1.error = "Field ini harus berupa angka yang valid"
-                }
-
-                if (value2 == null){
-                    isInvalidDouble = true
-                    edtValue2.error = "Field ini harus berupa angka yang valid"
-                }
-
-                if (!isEmptyField && !isInvalidDouble){
-                    val calculate = value1 as Double / value2 as Double
+                if (!isEmptyField){
+                    val calculate = inputValue1.toDouble() / inputValue2.toDouble()
                     tvResult.text = calculate.toString()
                 }
             }
-        }
-    }
-
-    private fun toDouble(str: String): Double?{
-        return try {
-            str.toDouble()
-        } catch (e: NumberFormatException){
-            null
         }
     }
 }
